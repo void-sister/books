@@ -6,10 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
-  /**
-   * Indicates if the model should be timestamped.
-   *
-   * @var bool
-   */
-  public $timestamps = false;
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
+     * Get the books that belong to the author.
+     */
+    public function books()
+    {
+        return $this->hasMany('App\Book')->count();
+    }
 }
