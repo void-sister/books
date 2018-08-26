@@ -6,8 +6,11 @@
   </head>
   <body>
     <div class="container">
+
       <h2>@yield('h2')</h2>
+
       @yield('content')
+      
     </div>
   </body>
 </html>
