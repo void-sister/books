@@ -7,7 +7,7 @@
 @section('content')
 
 
-<form method="post" action="{{ action('AuthorController@store') }}">
+<form method="POST" action="{{ action('AuthorController@store') }}">
   {{ csrf_field() }}
   <div>
     <label for="name">Author's Name</label>
