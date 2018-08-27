@@ -22,10 +22,18 @@
             <td>{{ $author->book_id }}</td>
             <td>
 
-              <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
+              <div class="btn-toolbar mb-3" role="toolbar">
+                <a class="btn btn-small btn-success" href="{{ url('/authors', $author->id) }}">Show</a>
+                <a class="btn btn-small btn-info" href="{{ route('authors.edit', $author->id) }}">Edit</a>
 
-              <a class="btn btn-small btn-success" href="{{ url('/authors', $author->id) }}">Show</a>
-              <a class="btn btn-small btn-info" href="{{ route('authors.edit', $author->id) }}">Edit</a>
+                <form method="POST" action="{{ action('AuthorController@destroy', $author->id) }}" class="inline">
+                  {{ csrf_field() }}
+                  {{ method_field('DELETE') }}
+
+                  <input type="submit" class="btn btn-danger" value="Delete">
+
+                </form>
+              </div>
 
             </td>
         </tr>

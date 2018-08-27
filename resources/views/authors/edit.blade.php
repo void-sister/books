@@ -8,6 +8,7 @@
 
 <form action="{{ action('AuthorController@update', $author->id) }}" method="POST">
   <input type="hidden" name="_method" value="PUT" />
+
   {{ csrf_field() }}
   <div>
     <label for="name">Author's Name</label>
