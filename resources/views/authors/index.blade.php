@@ -22,11 +22,10 @@
             <td>{{ $author->book_id }}</td>
             <td>
 
-                <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
-                <!-- we will add this later since its a little more complicated than the other two buttons -->
+              <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
 
-                <a class="btn btn-small btn-success" href="{{ URL::to('authors/' . $author->id) }}">Show</a>
-                <a class="btn btn-small btn-info" href="{{ URL::to('authors/' . $author->id . '/edit') }}">Edit</a>
+              <a class="btn btn-small btn-success" href="{{ url('/authors', $author->id) }}">Show</a>
+              <a class="btn btn-small btn-info" href="{{ route('authors.edit', $author->id) }}">Edit</a>
 
             </td>
         </tr>
