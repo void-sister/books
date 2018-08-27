@@ -17,8 +17,6 @@ class Author extends Model
         'name',
     ];
 
-
-
     /**
      * Get the books that belong to the author.
      */
