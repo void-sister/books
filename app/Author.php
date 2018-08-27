@@ -13,6 +13,12 @@ class Author extends Model
      */
     public $timestamps = false;
 
+    protected $fillable = [
+        'name',
+    ];
+
+
+
     /**
      * Get the books that belong to the author.
      */
