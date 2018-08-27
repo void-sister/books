@@ -18,7 +18,6 @@ class AuthorController extends Controller
         return view('authors.index')->with('authors', $authors);
     }
 
-
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +25,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+      return view('authors.create');
     }
 
     /**
@@ -37,7 +36,11 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $author = new Author;
+      $author->name = $request->name;
+      $author->save();
+
+      return redirect('authors');
     }
 
     /**
@@ -48,7 +51,8 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-        //
+      $author = Author::findOrFail($id);
+      return view('authors.show')->with('author', $author);
     }
 
     /**
@@ -59,7 +63,8 @@ class AuthorController extends Controller
      */
     public function edit($id)
     {
-        //
+      $author = Author::findOrFail($id);
+      return view('authors.edit')->with('author', $author);
     }
 
     /**
@@ -71,7 +76,9 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $author = Author::findOrFail($id);
+      $author->update($request->all());
+      return redirect('authors');
     }
 
     /**
@@ -82,6 +89,9 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $author = Author::findOrFail($id);
+      $author->delete();
+
+      return redirect('authors');
     }
 }
