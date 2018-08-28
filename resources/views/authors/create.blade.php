@@ -13,8 +13,10 @@
     <label for="name">Author's Name</label>
     <input type="text" id="name" name="name" value="{{ old('name') }}">
   </div>
-  <button type="submit" class="btn btn-primary">Create</button>
+  <button type="submit" class="btn btn-success">Create</button>
 </form>
 
+<br>
+  <a class="btn btn-primary" href="{{ url('/authors') }}">Back</a>
 
 @endsection

@@ -14,7 +14,11 @@
     <label for="name">Author's Name</label>
     <input type="text" id="name" name="name" value="{{ $author->name }}">
   </div>
-  <button type="submit" class="btn btn-primary">Edit</button>
+  <button type="submit" class="btn btn-success">Edit</button>
 </form>
+
+<br>
+  <a class="btn btn-primary" href="{{ url('/authors') }}">Back</a>
+
 
 @endsection

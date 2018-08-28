@@ -5,12 +5,17 @@
 @section('h2', 'Authors List')
 
 @section('content')
+
+<div class="btn-toolbar mb-2" role="toolbar">
+  <a class="btn btn-small btn-primary" href="{{ route('authors.create') }}">Add Author</a>
+</div>
+
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
             <td>ID</td>
             <td>Name</td>
-            <td>Book Id</td>
+            <td>Books Count</td>
             <td>Actions</td>
         </tr>
     </thead>

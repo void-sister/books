@@ -27,7 +27,10 @@
     <label for="title">Book Title</label>
     <input type="text" id="title" name="title" value="{{ $book->title }}">
   </div>
-  <button type="submit" class="btn btn-primary">Edit</button>
+  <button type="submit" class="btn btn-success">Edit</button>
 </form>
+
+<br>
+  <a class="btn btn-primary" href="{{ url('/books') }}">Back</a>
 
 @endsection

@@ -5,6 +5,11 @@
 @section('h2', 'Books List')
 
 @section('content')
+
+<div class="btn-toolbar mb-2" role="toolbar">
+  <a class="btn btn-small btn-primary" href="{{ route('books.create') }}">Add Book</a>
+</div>
+
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -33,7 +38,7 @@
                 </form>
 
               </div>
-              
+
             </td>
         </tr>
     @endforeach
