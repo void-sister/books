@@ -6,10 +6,12 @@
 
 @section('content')
 
-<div class="btn-toolbar mb-2" role="toolbar">
-  <a class="btn btn-small btn-primary" href="{{ url('/authors') }}">All Authors</a>
+<div>
+  <a class="btn btn-small btn-primary" href="{{ url('/authors') }}" role="button">All Authors</a>
+  <a class="btn btn-small btn-primary" role="button" href="{{ route('books.create') }}">Add Book</a>
 </div>
 
+<br>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -24,7 +26,7 @@
         <tr>
             <td>{{ $book->id }}</td>
             <td>{{ $book->title }}</td>
-            <td>{{ $book->author->name }}</td>
+            <td>{{ $book->author['name'] }}</td>
             <td>
 
               <div class="btn-toolbar mb-3" role="toolbar">

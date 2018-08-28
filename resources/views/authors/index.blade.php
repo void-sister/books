@@ -6,10 +6,12 @@
 
 @section('content')
 
-<div class="btn-toolbar mb-2" role="toolbar">
-  <a class="btn btn-small btn-primary" href="{{ url('/books') }}">All Books</a>
+<div>
+  <a class="btn btn-small btn-primary" href="{{ url('/books') }}" role="button">All Books</a>
+  <a class="btn btn-small btn-primary" href="{{ route('authors.create') }}">Add Author</a>
 </div>
 
+<br>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
