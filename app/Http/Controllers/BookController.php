@@ -54,7 +54,8 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+      $book = Book::findOrFail($id);
+      return view('books.show')->with('book', $book);
     }
 
     /**
@@ -77,7 +78,7 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
