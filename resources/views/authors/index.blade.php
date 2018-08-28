@@ -24,7 +24,7 @@
         <tr>
             <td>{{ $author->id }}</td>
             <td>{{ $author->name }}</td>
-            <td>{{ $author->book_id }}</td>
+            <td>{{ $author->books->count() }}</td>
             <td>
 
               <div class="btn-toolbar mb-3" role="toolbar">
