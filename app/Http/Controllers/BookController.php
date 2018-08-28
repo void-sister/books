@@ -25,7 +25,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('books.create');
+      $authors = Author::all();
+      return view('books.create')->with('authors', $authors);
     }
 
     /**
