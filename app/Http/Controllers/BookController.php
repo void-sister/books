@@ -66,7 +66,11 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+      $book = Book::findOrFail($id);
+      $authors = Author::all();
+      return view('books.edit')
+        ->with('book', $book)
+        ->with('authors', $authors);
     }
 
     /**
@@ -78,7 +82,11 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+      $book = Book::findOrFail($id);
+      $book->author_id = $request->input('author_id');
+      $book->title = $request->input('title');
+      $book->save();
+      return redirect('books');
     }
 
     /**
