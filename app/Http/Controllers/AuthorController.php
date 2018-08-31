@@ -80,6 +80,10 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $validatedData = $request->validate([
+          'name' => 'required|max:100',
+      ]);
+      
       $author = Author::findOrFail($id);
       $author->name = $request->input('name');
       $author->save();

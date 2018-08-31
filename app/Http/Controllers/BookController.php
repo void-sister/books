@@ -87,6 +87,11 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $validatedData = $request->validate([
+          'author_id' => 'bail|required|integer',
+          'title' => 'required|max:255'
+      ]);
+
       $book = Book::findOrFail($id);
       $book->author_id = $request->input('author_id');
       $book->title = $request->input('title');
