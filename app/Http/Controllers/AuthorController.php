@@ -36,6 +36,10 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
+      $validatedData = $request->validate([
+          'name' => 'required|max:100',
+      ]);
+
       $author = new Author;
       $author->name = $request->name;
       $author->save();

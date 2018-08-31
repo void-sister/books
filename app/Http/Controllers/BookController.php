@@ -38,6 +38,11 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+      $validatedData = $request->validate([
+          'author_id' => 'bail|required|integer',
+          'title' => 'required|max:255'
+      ]);
+
       $book = new Book;
       $book->author_id = $request->author_id;
       $book->title = $request->title;
