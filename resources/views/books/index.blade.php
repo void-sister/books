@@ -47,5 +47,8 @@
     </tbody>
 </table>
 
+
+{{ $books->links() }}
+
 <a class="btn btn-small btn-primary" href="{{ route('books.create') }}">Add Book</a>
 @endsection

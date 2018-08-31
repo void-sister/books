@@ -14,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = Author::all();
+        $authors = Author::simplePaginate(5);
         return view('authors.index')->with('authors', $authors);
     }
 
@@ -83,7 +83,7 @@ class AuthorController extends Controller
       $validatedData = $request->validate([
           'name' => 'required|max:100',
       ]);
-      
+
       $author = Author::findOrFail($id);
       $author->name = $request->input('name');
       $author->save();

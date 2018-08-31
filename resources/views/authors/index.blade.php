@@ -48,6 +48,7 @@
     </tbody>
 </table>
 
+{{ $authors->links() }}
 
 <a class="btn btn-small btn-primary" href="{{ route('authors.create') }}">Add Author</a>
 @endsection
