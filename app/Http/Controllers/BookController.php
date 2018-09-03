@@ -15,7 +15,7 @@ class BookController extends Controller
      */
     public function index()
     {
-      $books = Book::simplePaginate(5);
+      $books = Book::simplePaginate(10);
       return view('books.index')->with('books', $books);
     }
 
