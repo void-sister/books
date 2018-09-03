@@ -1,11 +1,8 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('title', 'Create Book')
 
-@section('h2', 'Create Book')
-
 @section('content')
-
 
 <form method="POST" action="{{ action('BookController@store') }}">
   {{ csrf_field() }}
@@ -26,6 +23,6 @@
 </form>
 
 <br>
-  <a class="btn btn-primary" href="{{ url('/books') }}">Back</a>
+  <a class="btn btn-primary" href="{{ url()->previous() }}">Back</a>
 
 @endsection

@@ -1,17 +1,9 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('title', 'Books')
 
-@section('h2', 'Books List')
-
 @section('content')
 
-<div>
-  <a class="btn btn-small btn-primary" href="{{ url('/authors') }}" role="button">All Authors</a>
-  <a class="btn btn-small btn-primary" role="button" href="{{ route('books.create') }}">Add Book</a>
-</div>
-
-<br>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -30,7 +22,7 @@
             <td>
 
               <div class="btn-toolbar mb-3" role="toolbar">
-                <a class="btn btn-small btn-success" href="{{ url('/books', $book->id) }}">Show</a>
+                <a class="btn btn-small btn-success" href="{{ route('books.show', $book->id) }}">Show</a>
                 <a class="btn btn-small btn-info" href="{{ route('books.edit', $book->id) }}">Edit</a>
 
                 <form method="POST" action="{{ action('BookController@destroy', $book->id) }}" class="inline">
@@ -40,7 +32,6 @@
                 </form>
 
               </div>
-
             </td>
         </tr>
     @endforeach
@@ -50,5 +41,8 @@
 
 {{ $books->links() }}
 
-<a class="btn btn-small btn-primary" href="{{ route('books.create') }}">Add Book</a>
+@auth
+  <a class="btn btn-small btn-primary" href="{{ route('books.create') }}">Add Book</a>
+@endauth
+
 @endsection

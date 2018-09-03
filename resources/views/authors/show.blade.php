@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('title', 'Show Author')
 
@@ -6,6 +6,6 @@
 
 <p>Here will be the list of the {{ $author->name }}'s books</p>
 
-<a class="btn btn-primary" href="{{ url('/authors') }}">Back</a>
+<a class="btn btn-primary" href="{{ url()->previous() }}">Back</a>
 
 @endsection

@@ -1,8 +1,6 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('title', 'Edit Author')
-
-@section('h2', 'Edit')
 
 @section('content')
 
@@ -18,7 +16,7 @@
 </form>
 
 <br>
-  <a class="btn btn-primary" href="{{ url('/authors') }}">Back</a>
+  <a class="btn btn-primary" href="{{ url()->previous() }}">Back</a>
 
 
 @endsection

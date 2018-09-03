@@ -14,7 +14,16 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <p>
+                      You are logged in! Now you can add, edit and delete books and authors. Enjoy)
+                    </p>
+
+                    <div class="list-group">
+                      <a href="{{ route('books.index') }}" class="list-group-item list-group-item-action">List of all books</a>
+                      <a href="{{ route('books.create') }}" class="list-group-item list-group-item-action">Add a book</a>
+                      <a href="{{ route('authors.index') }}" class="list-group-item list-group-item-action">List of all authors</a>
+                      <a href="{{ route('authors.create') }}" class="list-group-item list-group-item-action">Add an author</a>
+                    </ul>
                 </div>
             </div>
         </div>
