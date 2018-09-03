@@ -20,3 +20,7 @@ Route::resources([
     'books' => 'BookController',
     'authors' => 'AuthorController'
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
