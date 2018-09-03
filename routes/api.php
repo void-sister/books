@@ -16,3 +16,15 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// List books
+Route::get('books', 'ApiBookController@index');
+
+// List single book
+Route::get('book/{id}', 'ApiBookController@show');
+
+// Update book
+Route::put('book/{id}', 'ApiBookController@update');
+
+// Delete book
+Route::delete('book/{id}', 'ApiBookController@destroy');
