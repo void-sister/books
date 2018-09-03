@@ -11,16 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::resources([
-    'books' => 'BookController',
-    'authors' => 'AuthorController'
+Route::get('/', 'AuthorController@index');
+Route::resource('authors', 'AuthorController')->only([
+    'index', 'show'
 ]);
+Route::get('/dashboard', 'DashboardController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('books', 'BookController')->middleware('auth');
+Route::resource('authors', 'AuthorController')->except([
+    'index', 'show'
+])->middleware('auth');
