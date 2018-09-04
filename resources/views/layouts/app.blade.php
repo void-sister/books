@@ -28,18 +28,26 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                        {{ 'Books Project' }}
-                    </a>
+                    @guest
+                      <a class="navbar-brand" href="{{ url('/') }}">
+                          {{ 'Books Project' }}
+                      </a>
+                    @endguest
+
+                    @auth
+                      <a class="navbar-brand" href="{{ url('/dashboard') }}">
+                          {{ 'Books Project' }}
+                      </a>
+                    @endauth
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     @auth
-                    <ul class="nav navbar-nav">
-                      <li><a href="{{ url('/authors') }}">All Authors</a></li>
-                      <li><a href="{{ url('/books') }}">All Books</a></li>
-                    </ul>
+                      <ul class="nav navbar-nav">
+                        <li><a href="{{ url('/authors') }}">All Authors</a></li>
+                        <li><a href="{{ url('/books') }}">All Books</a></li>
+                      </ul>
                     @endauth
 
                     <!-- Right Side Of Navbar -->
@@ -74,19 +82,21 @@
             </div>
         </nav>
 
-        @section('errors')
-          @if ($errors->any())
-              <div class="alert alert-danger">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-          @endif
-        @show
+        <div class="container">
+          @section('errors')
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+          @show
 
-        @yield('content')
+          @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->

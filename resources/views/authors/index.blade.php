@@ -50,8 +50,9 @@
 
 {{ $authors->links() }}
 
+<br>
 @auth
-  <a class="btn btn-small btn-primary" href="{{ route('authors.create') }}">Add Author</a>
+<a class="btn btn-small btn-primary" href="{{ route('authors.create') }}">Add Author</a>
 @endauth
 
 @endsection

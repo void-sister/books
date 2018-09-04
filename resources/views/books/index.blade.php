@@ -41,6 +41,7 @@
 
 {{ $books->links() }}
 
+<br>
 @auth
   <a class="btn btn-small btn-primary" href="{{ route('books.create') }}">Add Book</a>
 @endauth
