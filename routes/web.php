@@ -12,10 +12,10 @@
 */
 
 Route::get('/', 'AuthorController@index');
-Route::resource('authors', 'AuthorController')->only([
-    'index', 'show'
-]);
-Route::resource('books', 'BookController')->only(['show']);
+Route::get('/authors', 'AuthorController@index');
+Route::get('authors/show/{id}', 'AuthorController@show');
+
+Route::get('books/show/{id}', 'BookController@show');
 Route::get('/dashboard', 'DashboardController@index');
 
 Auth::routes();

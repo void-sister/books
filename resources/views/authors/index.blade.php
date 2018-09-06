@@ -30,7 +30,7 @@
             <td>
 
               <div class="btn-toolbar mb-3" role="toolbar">
-                <a class="btn btn-small btn-success" href="{{ route('authors.show', $author->id) }}">Show</a>
+                <a class="btn btn-small btn-success" href="{{ url('authors/show/{id}', $author->id) }}">Show</a>
 
                 @auth
                   <a class="btn btn-small btn-info" href="{{ route('authors.edit', $author->id) }}">Edit</a>

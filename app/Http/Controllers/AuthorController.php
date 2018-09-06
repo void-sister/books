@@ -25,7 +25,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-      return view('authors.create');
+        return view('authors.create');
     }
 
     /**
@@ -71,8 +71,8 @@ class AuthorController extends Controller
      */
     public function edit($id)
     {
-      $author = Author::findOrFail($id);
-      return view('authors.edit')->with('author', $author);
+        $author = Author::findOrFail($id);
+        return view('authors.edit')->with('author', $author);
     }
 
     /**

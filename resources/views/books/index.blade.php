@@ -22,7 +22,7 @@
             <td>
 
               <div class="btn-toolbar mb-3" role="toolbar">
-                <a class="btn btn-small btn-success" href="{{ route('books.show', $book->id) }}">Show</a>
+                <a class="btn btn-small btn-success" href="{{ url('books/show/{id}', $book->id) }}">Show</a>
                 <a class="btn btn-small btn-info" href="{{ route('books.edit', $book->id) }}">Edit</a>
 
                 <form method="POST" action="{{ action('BookController@destroy', $book->id) }}" class="inline">
